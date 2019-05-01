@@ -55,11 +55,11 @@ RUN mkdir $HOME/.jupyter \
     && bash Miniconda3.sh -b -p $CONDA_DIR \
     && rm Miniconda3.sh \
     && export PATH=$CONDA_DIR/bin:$PATH \
-    && $CONDA_DIR/bin/conda config --system --prepend channels conda-forge  \
+    && $CONDA_DIR/bin/conda config --system --append channels conda-forge  \
     && $CONDA_DIR/bin/conda config --system --set auto_update_conda false  \
     && $CONDA_DIR/bin/conda config --system --set show_channel_urls true  \
     && $CONDA_DIR/bin/conda update --all --quiet --yes  \
-    && $CONDA_DIR/bin/conda install --yes --quiet 'mkl' -c intel jupyter 'notebook=5.7.*' $(while read requirement; do echo \'$requirement\'; done < /home/requirements.txt) \
+    && $CONDA_DIR/bin/conda install --yes --quiet 'mkl' jupyter 'notebook=5.7.*' $(while read requirement; do echo \'$requirement\'; done < /home/requirements.txt) \
     && $CONDA_DIR/bin/conda clean -tipsy \
     && $CONDA_DIR/bin/conda remove --quiet --yes --force qt pyqt \
     && jupyter nbextension enable --py widgetsnbextension --sys-prefix \
