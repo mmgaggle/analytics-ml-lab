@@ -13,3 +13,4 @@ matplotlib==3.0.3
 flask==1.0.2
 tensorflow==1.13.1
 pillow==6.0.0
+boto3==1.9.139
