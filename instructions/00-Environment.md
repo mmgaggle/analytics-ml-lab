@@ -1,10 +1,13 @@
+# REQUIRED
 
-## Remote cpu and memory limits from default quota
+## Remove cpu and memory limits from default quota
 ```
 oc edit userquota default
 ```
 
-## Scale worker machinesets to 0
+# OPTIONAL
+
+## Scale worker machinesets replicas to 0
 ```
 oc get machinesets -n openshift-machine-api
 oc edit machineset -n openshift-machine-api <>
