@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rook-config-override
+  namespace: rook-ceph
+data:
+  config: |
+    [global]
+    debug ms = 1
+    [client]
+    rgw_frontends =  civetweb port=0.0.0.0:8080 num_threads=1024 request_timeout_ms=100000
+    rgw_dynamic_resharding = false
+    rgw_ops_log_rados = false
+    rgw_override_bucket_index_max_shards = 1
+    rgw_resolve_cname = false
+    rgw_dns_name = rook-ceph-rgw-my-store.rook-ceph.svc.cluster.local
