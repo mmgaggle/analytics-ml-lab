@@ -46,15 +46,3 @@ oc new-build --name=jupyter-notebook \
 ```
 oc logs -f buildconfig/jupyter-notebook
 ```
-
-## Create and Deploy Jupyter Notebook
-```
-oc new-app -i jupyter-notebook:latest \
-           -e JUPYTER_NOTEBOOK_PASSWORD=developer \
-           -e RGW_API_ENDPOINT="http://$(oc get services -n rook-ceph | grep rgw | awk '{print $3}'):8000"
-```
-
-## Expose RGW Credentials to Jupyter Notebook
-```
-oc set env --from=secret/s3-user-demo dc/jupyter-notebook
-```
