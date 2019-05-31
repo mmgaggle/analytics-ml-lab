@@ -37,7 +37,8 @@ Using the openshift-spark-py36 image stream as a base, we'll create a jupyter no
 
 ```
 oc new-build --name=jupyter-notebook \
-             https://github.com/mmgaggle/ml-workflows-for-developers#split \
+             https://github.com/mmgaggle/analytics-ml-lab \
+             --context-dir=notebook \
              -i openshift-spark-py36:latest \
              --strategy=docker
 ```

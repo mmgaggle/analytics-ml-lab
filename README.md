@@ -18,4 +18,4 @@ cluster with an object storage service. Instructions [here](instructions/02-Rook
 
 ## Jupyter Notebook
 
-The final task is to deploy a Jupyter Notebook 
+The final task is to deploy a Jupyter Notebook
