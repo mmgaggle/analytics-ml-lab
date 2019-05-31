@@ -4,7 +4,7 @@
 ```
 oc create -f scc.yaml
 oc create -f operator.yaml
-
+```
 
 ## Create Ceph cluster, 3 mons and OSDs on every host
 ```
